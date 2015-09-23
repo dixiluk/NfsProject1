@@ -1,5 +1,6 @@
 #pragma once
 #include "Environment.h"
+#include "Shader.h"
 
 class GraphicalObject
 {
@@ -13,6 +14,6 @@ protected:
 	double rotationPower;
 
 	virtual void compute();
-	virtual void draw();
+	virtual void draw(Shader *shad);
 };
 

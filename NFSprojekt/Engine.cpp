@@ -34,6 +34,13 @@ void Engine::Init(int argc, char * argv[])						//inicjacja parametrow OpenGl i 
 	{
 		fprintf(stderr, "Error: %s\n", glewGetErrorString(err));
 	}
+	int major = 0, minor = 0;
+	const char * version = (char *)glGetString(GL_VERSION);
+	if (sscanf(version, "%d.%d", &major, &minor) != 2)
+	{
+		printf("Bledny format wersji OpenGL\n");
+
+	}
 }
 
 void Engine::DisplayFunc()		//glowna petla
