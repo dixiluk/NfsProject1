@@ -1,5 +1,4 @@
 
-//c
 #include "StructureShader.h"
 #include "Environment.h"
 #include "Engine.h"

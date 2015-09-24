@@ -1,5 +1,3 @@
-
-//c
 #include "Engine.h"
 #include "Camera.h"
 #include "DynamicObject.h"

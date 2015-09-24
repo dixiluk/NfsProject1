@@ -1,5 +1,3 @@
-
-//c
 #include "Texture.h"
 
 Texture::Texture(const char* filename, GLenum image_format, GLint internal_format, GLint level, GLint border)

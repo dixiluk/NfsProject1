@@ -1,5 +1,3 @@
-
-//c
 #pragma once
 #include "Shader.h"
 class StructureShader :

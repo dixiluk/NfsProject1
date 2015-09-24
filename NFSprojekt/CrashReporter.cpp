@@ -1,5 +1,3 @@
-
-//c
 #include "CrashReporter.h"
 #include <stdio.h>
 #include <stdlib.h>

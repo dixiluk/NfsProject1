@@ -1,5 +1,3 @@
-
-//c
 #include <gl/glew.h>
 #include <fbxsdk.h>
 #include <GL/freeglut.h>

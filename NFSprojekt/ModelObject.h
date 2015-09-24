@@ -1,5 +1,3 @@
-
-//c
 #pragma once
 #include "Environment.h"
 
