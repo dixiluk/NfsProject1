@@ -60,7 +60,6 @@ void Engine::DisplayFunc()		//glowna petla
 
 void Engine::ReshapeFunc(int width, int height)	//funkcja zmiany rozmiaru okna
 {
-	return;
 	Instance->resolution.Height = height;
 	Instance->resolution.Width = width;
 	glViewport(0, 0, width, height);

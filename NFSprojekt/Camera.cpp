@@ -16,7 +16,7 @@ Camera::Camera(glm::vec3 position, glm::vec3 direction, glm::vec3 axis)
 	this->pitch = 0;
 	this->yaw = 0;
 
-	this->setPerspective(90.0,
+	this->setPerspective(45.0,
 		(GLfloat) Engine::Instance->resolution.Width
 		/ Engine::Instance->resolution.Height, 1, 50);
 	this->setupCamera();
@@ -44,7 +44,7 @@ void Camera::CameraMotion(GLint x, GLint y)	//funkcja obracanie kamery myszka
 	ActiveCamera->direction.y = -sin(ActiveCamera->yaw);
 	ActiveCamera->direction.z = cos(ActiveCamera->pitch)*cos(ActiveCamera->yaw);
 
-	glutWarpPointer(720, 450);//Engine::Instance->resolution.Width / 2, Engine::Instance->resolution.Height / 2);
+	glutWarpPointer(Engine::Instance->resolution.Width / 2, Engine::Instance->resolution.Height / 2);
 	ActiveCamera->setupCamera();
 }
 
