@@ -1,7 +1,8 @@
+
+//c
 #pragma once
 #include "Engine.h"
 #include <list>
-
 class Camera
 {
 	friend class Engine;

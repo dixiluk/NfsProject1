@@ -1,3 +1,5 @@
+
+//c
 #include "Structure.h"
 
 std::list<Structure*> Structure::Structures;
