@@ -18,7 +18,7 @@ int main(int argc, char * argv[])
 
 	Engine::Instance->activeScene = (Scene*)scene;
 
-	Camera *camera = new Camera(glm::vec3(0,4,0));
+	Camera *camera = new Camera(glm::vec3(-5,0,0));
 
 	camera->setActive();
 

@@ -8,10 +8,11 @@ varying vec3 Tangent;
 varying vec3 Binormal;
 varying vec3 WorldPosition;
 
+float DepthValue;
 
 void main()
 {
-	//DepthValue = LightSpacePosition.z / LightSpacePosition.w;
+	DepthValue = LightSpacePosition.z / LightSpacePosition.w;
 	//if(Pass == 0){
 	//	gl_FragColor = vec4(DepthValue,DepthValue,DepthValue,1.0);
 	//	return;
@@ -19,6 +20,6 @@ void main()
 	//float ShadowFactor = CalcShadowFactor();
 
 	//float Brightness = ShadowFactor * (1.5-DepthValue);
-	//gl_FragColor = vec4(DepthValue,DepthValue,DepthValue,1.0);
-	gl_FragColor = vec4(0.5,0.1,0.8,1.0);
+	gl_FragColor = vec4(DepthValue,DepthValue,DepthValue,1.0);
+	//gl_FragColor = vec4(0.5,0.1,0.8,1.0);
 }

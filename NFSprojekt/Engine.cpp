@@ -29,6 +29,7 @@ void Engine::Init(int argc, char * argv[])						//inicjacja parametrow OpenGl i 
 	glutDisplayFunc(Engine::DisplayFunc);
 	glutPassiveMotionFunc(Engine::PassiveMotionFunc);
 	glutReshapeFunc(Engine::ReshapeFunc);
+	glutIdleFunc(Engine::DisplayFunc);
 	GLenum err = glewInit();
 	if (GLEW_OK != err)
 	{
@@ -42,7 +43,7 @@ void Engine::Init(int argc, char * argv[])						//inicjacja parametrow OpenGl i 
 
 	}
 }
-
+int tmp=0;
 void Engine::DisplayFunc()		//glowna petla
 {
 	glEnable(GL_DEPTH_TEST);
@@ -51,14 +52,17 @@ void Engine::DisplayFunc()		//glowna petla
 	Engine::UpdatePass();
 
 	Engine::RenderPass();
+	tmp++;
+	//printf("%d\n",tmp);
 
-	//glFlush();
+	glFlush();
 	glutSwapBuffers();
-	//glutPostRedisplay();
+	glutPostRedisplay();
 }
 
 void Engine::ReshapeFunc(int width, int height)	//funkcja zmiany rozmiaru okna
 {
+	return;
 	Instance->resolution.Height = height;
 	Instance->resolution.Width = width;
 	glViewport(0, 0, width, height);

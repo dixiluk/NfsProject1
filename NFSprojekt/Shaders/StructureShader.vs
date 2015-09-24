@@ -24,6 +24,6 @@ void main()
 	Normal = normalize (NormalMatrix * inNormal);
 	Tangent = normalize (NormalMatrix * inTangent);
 	Binormal = normalize (NormalMatrix * inBitangent);
-	
+	LightSpacePosition =  MVP * vec4(inPosition, 1.0);
 	gl_Position = MVP * vec4(inPosition, 1.0);
 }

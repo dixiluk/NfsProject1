@@ -28,7 +28,11 @@ Camera::~Camera()
 
 void Camera::CameraMotion(GLint x, GLint y)	//funkcja obracanie kamery myszka
 {
-	if (x == Engine::Instance->resolution.Width / 2 && y == Engine::Instance->resolution.Height / 2) return;
+	printf("%f  ", (float) (x));
+	printf("%f\n", (float) (y));
+
+	if ((x == Engine::Instance->resolution.Width / 2 +1 || x == Engine::Instance->resolution.Width / 2 -1 || x == Engine::Instance->resolution.Width / 2) 
+		&& (y == Engine::Instance->resolution.Height / 2 +1 || y == Engine::Instance->resolution.Height / 2 -1 || y == Engine::Instance->resolution.Height / 2)) return;
 	ActiveCamera->pitch += ((GLdouble) x - Engine::Instance->resolution.Width / 2) / 1000;
 	ActiveCamera->yaw += ((GLdouble) y - Engine::Instance->resolution.Height / 2) / 1000;
 
@@ -40,7 +44,8 @@ void Camera::CameraMotion(GLint x, GLint y)	//funkcja obracanie kamery myszka
 	ActiveCamera->direction.y = -sin(ActiveCamera->yaw);
 	ActiveCamera->direction.z = cos(ActiveCamera->pitch)*cos(ActiveCamera->yaw);
 
-	glutWarpPointer(Engine::Instance->resolution.Width / 2, Engine::Instance->resolution.Height / 2);
+	glutWarpPointer(720, 450);//Engine::Instance->resolution.Width / 2, Engine::Instance->resolution.Height / 2);
+	ActiveCamera->setupCamera();
 }
 
 void Camera::setActive()
