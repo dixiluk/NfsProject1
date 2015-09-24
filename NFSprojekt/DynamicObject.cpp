@@ -1,7 +1,7 @@
 #include "DynamicObject.h"
 
 
-DynamicObject::DynamicObject()
+DynamicObject::DynamicObject(glm::vec3 position, Shader* shader) : GraphicalObject(position, shader)
 {
 }
 
@@ -11,4 +11,5 @@ DynamicObject::~DynamicObject()
 }
 
 
-void DynamicObject::draw(Shader *shad){}
+void DynamicObject::draw(){}
+void DynamicObject::compute(){}

@@ -3,14 +3,13 @@
 
 #include "Texture.h"
 
-#define private public
 
 class ModelObject
 {
 	friend class Model;
 	friend class Structure;
 	friend class DynamicObject;
-private:
+public:
 	GLfloat* v, *uv, *n;
 	const char* name;
 	int verticesCount;
@@ -21,5 +20,6 @@ private:
 	void extractMesh(FbxNode* node);
 	ModelObject(FbxNode* node);
 	~ModelObject();
+
 };
 

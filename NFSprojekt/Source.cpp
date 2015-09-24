@@ -1,6 +1,7 @@
 #include "Environment.h"
 #include "Engine.h"
 #include "Structure.h"
+#include "Car.h"
 #include "Environment.h"
 #include "Camera.h"
 #include "ModelObject.h"
@@ -14,8 +15,7 @@ int main(int argc, char * argv[])
 
 	Scene* scene = new Scene();
 
-	scene->addGraphicalObject(new Structure(glm::vec3(0, 0, 0), new Model("Audi-TT.fbx"), new StructureShader()));
-	//scene->addGraphicalObject(new Structure(glm::vec3(0, 3, 0), new Model("Audi-TT.fbx"), new StructureShader()));
+	scene->addGraphicalObject(new Car(glm::vec3(0, 0, 0), new Model("Audi-TT.fbx"), new StructureShader()));
 
 	Engine::Instance->activeScene = (Scene*)scene;
 

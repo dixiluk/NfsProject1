@@ -3,19 +3,18 @@
 std::list<Structure*> Structure::Structures;
 
 
-Structure::Structure(glm::vec3 position, Model* model, Shader* shader) : StaticObject()
+Structure::Structure(glm::vec3 position, Model* model, Shader* shader) : StaticObject(position, shader)
 {
-	this->position = position;
 	this->model = model;
-	this->shader = shader;
 	Structures.push_back(this);
+	this->rotationAxis = glm::vec3(0,0,0);
 }
 
 Structure::~Structure()
 {
 }
 
-void Structure::draw(Shader *shad)
+void Structure::draw()
 {
 	this->shader->onPrepare(this);
 

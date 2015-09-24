@@ -15,7 +15,6 @@ Camera::Camera(glm::vec3 position, glm::vec3 direction, glm::vec3 axis)
 	this->axis = axis;
 	this->pitch = 0;
 	this->yaw = 0;
-	this->mouseMotion = false;
 
 	this->setPerspective(45.0,
 		(GLfloat) Engine::Instance->resolution.Width
@@ -29,7 +28,7 @@ Camera::~Camera()
 
 void Camera::CameraMotion(GLint x, GLint y)	//funkcja obracanie kamery myszka
 {
-	if (!ActiveCamera->mouseMotion) return;
+	if (!Engine::Instance->keyboard['m']) return;
 	
 	if ((x == Engine::Instance->resolution.Width / 2 +1 || x == Engine::Instance->resolution.Width / 2 -1 || x == Engine::Instance->resolution.Width / 2) 
 		&& (y == Engine::Instance->resolution.Height / 2 +1 || y == Engine::Instance->resolution.Height / 2 -1 || y == Engine::Instance->resolution.Height / 2)) return;
