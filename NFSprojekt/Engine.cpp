@@ -68,11 +68,13 @@ void Engine::ReshapeFunc(int width, int height)	//funkcja zmiany rozmiaru okna
 
 void Engine::KeyboardFunc(unsigned char key, int x, int y)
 {
+	if(key == 'm') Camera::ActiveCamera->mouseMotion = true;
 
 }
 
 void Engine::KeyboardUpFunc(unsigned char key, int x, int y)
 {
+	if (key == 'm') Camera::ActiveCamera->mouseMotion = false;
 
 }
 

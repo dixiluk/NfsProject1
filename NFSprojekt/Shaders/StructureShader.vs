@@ -4,27 +4,10 @@ attribute vec2 inTexcoord;
 attribute vec3 inTangent;
 attribute vec3 inBitangent;
 
-uniform mat4 MVP, ModelViewMatrix, ModelMatrix;
-uniform mat3 NormalMatrix;
-uniform mat4 InvertedViewMatrix;
-uniform vec3 EyePosition;
-uniform float Shift;
-
-varying vec4 LightSpacePosition;
-varying vec3 Normal;
-varying vec3 Tangent;
-varying vec3 Binormal;
-varying vec3 WorldPosition;
-varying float DepthValue;
-varying float XPos;
+uniform mat4 MVP;
 
 void main()
 {
 	gl_TexCoord[0].st = inTexcoord;
-	Normal = normalize (NormalMatrix * inNormal);
-	Tangent = normalize (NormalMatrix * inTangent);
-	Binormal = normalize (NormalMatrix * inBitangent);
-	LightSpacePosition =  MVP * vec4(inPosition, 1.0);
 	gl_Position = MVP * vec4(inPosition, 1.0);
-	XPos = gl_Position.x;
 }

@@ -11,16 +11,14 @@ class ModelObject
 	friend class Structure;
 	friend class DynamicObject;
 private:
-	GLfloat* v, *uv, *n, *tan, *btan, *aI, *aW;
+	GLfloat* v, *uv, *n;
 	const char* name;
 	int verticesCount;
 	glm::vec3 relativePosition;
-	Texture *diffuseMap, *normalMap;
+	Texture *diffuseMap;
 	GLuint arrayBuffer;
-	void computeTangents();
 	void createArrayBuffer();
 	void extractMesh(FbxNode* node);
-	void extractBones(FbxNode* node);
 	ModelObject(FbxNode* node);
 	~ModelObject();
 };

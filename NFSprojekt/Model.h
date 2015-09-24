@@ -14,7 +14,6 @@ public:
 
 	Model(char* name);
 	~Model();
-	static Model* GetModel(char* name, char* location = "Models");
 };
 
 
