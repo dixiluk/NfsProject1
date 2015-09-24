@@ -43,7 +43,7 @@ void Engine::Init(int argc, char * argv[])						//inicjacja parametrow OpenGl i 
 
 	}
 }
-int tmp=0;
+
 void Engine::DisplayFunc()		//glowna petla
 {
 	glEnable(GL_DEPTH_TEST);
@@ -52,8 +52,6 @@ void Engine::DisplayFunc()		//glowna petla
 	Engine::UpdatePass();
 
 	Engine::RenderPass();
-	tmp++;
-	//printf("%d\n",tmp);
 
 	glFlush();
 	glutSwapBuffers();

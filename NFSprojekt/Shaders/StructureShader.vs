@@ -16,7 +16,7 @@ varying vec3 Tangent;
 varying vec3 Binormal;
 varying vec3 WorldPosition;
 varying float DepthValue;
-
+varying float XPos;
 
 void main()
 {
@@ -26,4 +26,5 @@ void main()
 	Binormal = normalize (NormalMatrix * inBitangent);
 	LightSpacePosition =  MVP * vec4(inPosition, 1.0);
 	gl_Position = MVP * vec4(inPosition, 1.0);
+	XPos = gl_Position.x;
 }

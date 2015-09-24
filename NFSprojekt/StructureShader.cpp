@@ -11,6 +11,7 @@ StructureShader::StructureShader() : Shader("StructureShader.vs", "StructureShad
 	this->textureLink = glGetUniformLocation(this->program, "Texture");
 	this->switchLink = glGetUniformLocation(this->program, "Switch");
 	this->mvpLink = glGetUniformLocation(this->program, "MVP");
+	this->czasLink = glGetUniformLocation(this->program, "Czas");
 	this->switchVal = 0;
 }
 
@@ -18,6 +19,8 @@ StructureShader::StructureShader() : Shader("StructureShader.vs", "StructureShad
 StructureShader::~StructureShader()
 {
 }
+
+float czas = 0;
 
 void StructureShader::onPrepare(void* ptr){
 
@@ -32,6 +35,9 @@ void StructureShader::onPrepare(void* ptr){
 
 	glm::mat4 ModelMatrix;
 
+	czas++;
+
+
 	ModelMatrix = glm::translate(glm::mat4(1.0f), object->position);
 	ModelMatrix = glm::rotate(ModelMatrix, -1.57079633f, glm::vec3(1, 0, 0));
 
@@ -41,6 +47,7 @@ void StructureShader::onPrepare(void* ptr){
 	glm::mat3 NormalMatrix = glm::mat3(ModelMatrix);
 
 	glUniformMatrix4fv(this->mvpLink, 1, GL_FALSE, glm::value_ptr(ModelViewProjMatrix));
+	glUniform1f(this->czasLink, czas);
 	glUniformMatrix3fv(this->normalMatrixLink, 1, GL_FALSE, glm::value_ptr(NormalMatrix));
 }
 
